@@ -63,3 +63,8 @@ document.addEventListener('keyup', (e) => {
     }
     document.getElementById("score").innerText = score;
 })
+
+function filterZero(row){
+    //create new array of all nums != 0
+    return row.filter(num => num != 0);
+}
