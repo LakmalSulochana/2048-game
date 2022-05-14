@@ -97,3 +97,16 @@ function slideLeft() {
         }
     }
 }
+function slideRight() {
+    for (let r = 0; r < rows; r++) {
+        let row = board[r];         //[0, 2, 2, 2]
+        row.reverse();              //[2, 2, 2, 0]
+        row = slide(row)            //[4, 2, 0, 0]
+        board[r] = row.reverse();   //[0, 0, 2, 4];
+        for (let c = 0; c < columns; c++){
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            let num = board[r][c];
+            updateTile(tile, num);
+        }
+    }
+}
